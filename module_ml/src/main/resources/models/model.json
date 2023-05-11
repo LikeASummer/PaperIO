@@ -1,0 +1,28 @@
+{
+  "path": "models/ai_player.onnx",
+  "angles": [
+    {
+      "value":0
+    },
+    {
+      "value":0.32
+    },
+    {
+      "value":1.48
+    },
+    {
+      "value":2.53
+    },
+    {
+      "value":-0.32
+    },
+    {
+      "value":-1.48
+    },
+    {
+      "value":-2.53
+    }
+  ],
+  "history" : 5,
+  "frameCount": 15
+}

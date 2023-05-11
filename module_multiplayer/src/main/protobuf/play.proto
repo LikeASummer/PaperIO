@@ -1,0 +1,69 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.paper.io.generated";
+option java_outer_classname = "PlayProto";
+
+service LobbyService {
+  rpc connect (LobbyConnection) returns (stream LobbyResponse) {}
+}
+
+message LobbyConnection {
+  string playerId = 1;
+}
+
+message LobbyResponse {
+  LobbyStatus status = 1;
+  string sessionId = 2;
+}
+
+enum LobbyStatus {
+  WAITING = 0;
+  CREATED = 1;
+  CLOSE = 2;
+}
+
+service SessionService {
+  rpc play (stream PlayerInput) returns (stream SessionMetadata) {}
+}
+
+message PlayerInput {
+  string playerId = 1;
+  Vector2D position = 2;
+  Vector2D direction = 3;
+  bool disconnect = 4;
+}
+
+message SessionMetadata {
+  string playerId = 1;
+  SessionState state = 2;
+  repeated PlayerState players = 3;
+  repeated Vector2D field = 4;
+}
+
+message PlayerState {
+  string playerId = 1;
+  Vector2D position = 2;
+  repeated Vector2D trajectory = 3;
+  repeated Vector2D territory = 4;
+  bool isActive = 5;
+  PlayerColor color = 6;
+}
+
+message Vector2D {
+  float x = 1;
+  float y = 2;
+}
+
+message PlayerColor {
+  float red = 1;
+  float green = 2;
+  float blue = 3;
+}
+
+enum SessionState {
+  WAITING_FOR_PLAYERS = 0;
+  IN_PROGRESS = 1;
+  ENDED = 2;
+  CLOSE_CONNECTION = 3;
+}
