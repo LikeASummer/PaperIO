@@ -84,7 +84,7 @@ lazy val module_singleplayer = project
     name := "module_singleplayer",
     libraryDependencies ++= Seq(
       "com.badlogicgames.gdx" % "gdx" % "1.11.0",
-      "com.badlogicgames.gdx" % "gdx-backend-lwjgl" % "1.11.0",
+      "com.badlogicgames.gdx" % "gdx-backend-lwjgl3" % "1.11.0",
       "com.badlogicgames.gdx" % "gdx-freetype" % "1.11.0"
     )
   )
@@ -96,7 +96,7 @@ lazy val module_multiplayer = project
     name := "module_multiplayer",
     libraryDependencies ++= Seq(
       "com.badlogicgames.gdx" % "gdx" % "1.11.0",
-      "com.badlogicgames.gdx" % "gdx-backend-lwjgl" % "1.11.0",
+      "com.badlogicgames.gdx" % "gdx-backend-lwjgl3" % "1.11.0",
       "com.badlogicgames.gdx" % "gdx-freetype" % "1.11.0",
 
       "com.typesafe.akka" %% "akka-http" % akkaHttpVersion,
@@ -119,7 +119,7 @@ lazy val module_desktop = project
     name := "module_desktop",
     libraryDependencies ++= Seq(
       "com.badlogicgames.gdx" % "gdx" % "1.11.0",
-      "com.badlogicgames.gdx" % "gdx-backend-lwjgl" % "1.11.0",
+      "com.badlogicgames.gdx" % "gdx-backend-lwjgl3" % "1.11.0",
       "com.badlogicgames.gdx" % "gdx-platform" % "1.11.0" classifier "natives-desktop",
       "com.badlogicgames.gdx" % "gdx-freetype" % "1.11.0",
       "com.badlogicgames.gdx" % "gdx-freetype-platform" % "1.11.0" classifier "natives-desktop"
