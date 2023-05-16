@@ -1,18 +1,17 @@
 package com.paper.io.desktop
 
 import com.badlogic.gdx.Game
-import com.badlogic.gdx.backends.lwjgl.{LwjglApplication, LwjglApplicationConfiguration}
+import com.badlogic.gdx.backends.lwjgl3.{Lwjgl3Application, Lwjgl3ApplicationConfiguration}
 import com.paper.io.geometry.complex.Radius
 
 object Application {
 
   def main(args: Array[String]): Unit = {
-    val config = new LwjglApplicationConfiguration()
-    config.title = "PaperIO"
-    config.width = 500
-    config.height = 500
-    config.foregroundFPS = 30
-    new LwjglApplication(new GameController()(Radius(250F), 1F), config)
+    val config = new Lwjgl3ApplicationConfiguration()
+    config.setWindowSizeLimits(500, 500, 500, 500)
+    config.setTitle("PaperIO")
+    config.setForegroundFPS(30)
+    new Lwjgl3Application(new GameController()(Radius(250F), 1F), config)
   }
 }
 
